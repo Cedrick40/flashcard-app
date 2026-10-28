@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web Dev Flashcards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <h1>Web Dev Flashcards</h1>
+      <button type="button" class="btn ghost" id="shuffle" aria-pressed="false">Shuffle</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="progress" aria-label="Progress">
+      <div class="progress-text">
+        <span id="counter">Card 1 of 12</span>
+        <span id="percent">8%</span>
+      </div>
+      <div class="bar" role="progressbar" aria-label="Deck progress" aria-valuemin="1" aria-valuemax="12" aria-valuenow="1">
+        <span id="bar-fill"></span>
+      </div>
+    </section>
+
+    <div class="scene">
+      <button type="button" class="card" id="card" aria-label="Flip card to show the answer">
+        <span class="card-inner" id="card-inner">
+          <span class="face front" id="front" aria-hidden="false">
+            <span class="tag" id="topic"></span>
+            <span class="side-label">Question</span>
+            <span class="text" id="question"></span>
+            <span class="hint">Click the card or press Space to flip</span>
+          </span>
+          <span class="face back" id="back" aria-hidden="true">
+            <span class="side-label">Answer</span>
+            <span class="text" id="answer"></span>
+            <span class="hint">Click to flip back</span>
+          </span>
+        </span>
+      </button>
+    </div>
+
+    <nav class="controls" aria-label="Card navigation">
+      <button type="button" class="btn" id="prev">&larr; Previous</button>
+      <button type="button" class="btn ghost" id="restart">Restart</button>
+      <button type="button" class="btn primary" id="next">Next &rarr;</button>
+    </nav>
+
+    <p class="shortcut">Keyboard: &larr; and &rarr; to move, Space to flip.</p>
+    <p class="sr-only" id="announce" aria-live="polite"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
